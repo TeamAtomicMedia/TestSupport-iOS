@@ -61,14 +61,33 @@ Test-specific extensions and helpers.
 
 ### Robots
 
-XCTestSupport includes the Robot protocol, and related protocols such as PushedRobotProtocol.
+UI tests can achieve code reuse using the Robots pattern. ‘Robots’ interact with particular pages, modes, or configurations of the app, on behalf of the test, keeping the test definition super simple.
 
-Robots define the minutiae of how to turn a scenario into specific actions, so tests can focus on describing the scenarios they're testing.
+XCTestSupport includes the Robot protocol, and related protocols such as PushedRobotProtocol.
 
 Robots represent a page in the app. Robots can make assertions about a displayed page in the app, based on data provided by the test. Robots can also navigate, returning new robots representing a new page or distinct configuration.
 
-Usage:
+Anatomy of a UI test making use of Robots:
+```swift
+AppRobot() // Start the chain by creating the robot representing the app being tested.
+    // The app launches. We start on the login screen.
+    .login() // Proceeds from the login screen. Return the Home Screen Robot.
+    // We are now on the home screen.
+    // The Home Screen Robot has been initalised and
+    // performs a wait to ensure the view displays.
+    // Autocomplete for `.` now suggests actions that can be performed on the homescreen.
+    .showUserMenu() // Taps the menu button and returns a Menu Robot.
+    .checkUsername(matches: "Bobby Tables")
+    // Performs a check on the content of the menu.
+    // Note that the dynamic data - the username - is passed in,
+    // rather than encoded into the robot. This ensures that
+    // checkUsername can be reused in other tests.
+    .closeUserMenu()
+    // Menu Robot remembers it was presented from Home Screen, and returns Home Screen Robot.
 ```
+
+Full implementation example:
+```swift
 struct HomeScreenRobot: Robot {
     init() {
         // Wait for an element to appear
