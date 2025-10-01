@@ -7,12 +7,12 @@ public extension XCUIApplication {
     // MARK: - NetMock
     
     @discardableResult
-    func netmockOverride(method: String = "GET", _ url: URL, response: String) -> Self {
+    func netmockOverride(method: NetMock.Method = .GET, _ url: URL, response: NetMock.Identifier) -> Self {
         netmockOverride(method: method, url, responses: [response])
     }
     
     @discardableResult
-    func netmockOverride(method: String = "GET", _ url: URL, responses: [String]) -> Self {
+    func netmockOverride(method: NetMock.Method = .GET, _ url: URL, responses: [NetMock.Identifier]) -> Self {
         netmockOverride(.init(method: method, url: url, responses: responses))
     }
     
