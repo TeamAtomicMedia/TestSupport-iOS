@@ -1,6 +1,8 @@
 # TestSupport-iOS
 Support toolkit for tests
 
+See also: https://atomicmedia.atlassian.net/wiki/spaces/DEV/pages/1743618051/UI+Testing+Strategy+Overview
+
 ## TestSupport
 
 A support library for interfacing between app and tests.
