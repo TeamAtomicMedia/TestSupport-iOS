@@ -152,13 +152,13 @@ extension AppRobot {
     @discardableResult
     func failLogin() -> Self {
         // Various alternatives:
-        app.netmockOverride("GET", "https://api.example.com/login", response: "Failure")
+        app.netmockOverride(.GET, "https://api.example.com/login", response: "Failure")
 
         app.netmockOverride("https://api.example.com/login", response: "Failure")
 
         app.netmockOverride("https://api.example.com/login", responses: ["Failure", "Success"])
 
-        let failLoginOverride = NetMock.Override(method: "GET", url: URL(string: "https://api.example.com/login")!, responses: ["Failure"])
+        let failLoginOverride = NetMock.Override(method: .GET, url: URL(string: "https://api.example.com/login")!, responses: ["Failure"])
         app.netmockOverride(failLoginOverride)
 
         return self
