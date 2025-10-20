@@ -1,13 +1,13 @@
 {
-  "originHash" : "c8a8ad6eedc3bc99ad18ea958bba61fdd3531be8070710039f8b85800b91a48f",
+  "originHash" : "b27435002268c50510073440973a210029bc911ae67bbd3b08ddb7c5ebd5abd7",
   "pins" : [
     {
       "identity" : "netmock-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/TeamAtomicMedia/NetMock-iOS.git",
       "state" : {
-        "revision" : "7ae5528823662d55523481b4d6e1f1c5c4d79db7",
-        "version" : "2.3.1"
+        "revision" : "b76c1868ca0455cb68d59fe5515f6b1da718bf68",
+        "version" : "3.0.0"
       }
     }
   ],

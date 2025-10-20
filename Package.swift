@@ -22,7 +22,7 @@ let package = Package(
             targets: ["XCTestSupport"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/TeamAtomicMedia/NetMock-iOS.git", .upToNextMajor(from: "2.0.0"))
+        .package(url: "https://github.com/TeamAtomicMedia/NetMock-iOS.git", from: "3.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
