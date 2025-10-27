@@ -124,6 +124,7 @@ struct HomeScreenRobot: Robot {
 struct DetailRobot<Parent: Robot>: PushedRobot {
     // PushedRobot looks for a `Parent` type and finds the generic param.
     // PushedRobot provides a `.goBack()` method, which returns the parent robot.
+    // PushedRobot provides a `.checkGoBackExists()` method, which validates whether a go back navigation button exists in the view hierarchy
     
     // ...
 }
