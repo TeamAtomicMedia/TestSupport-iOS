@@ -17,7 +17,7 @@ public extension PushedRobot {
     
     @discardableResult
     func checkCanGoBack() -> Self {
-        XCTAssert(app.toolbars.buttons.firstMatch.exists || app.navigationBars.buttons.firstMatch.exists)
+        XCTAssert(app.toolbars.buttons.exists || app.navigationBars.buttons.exists)
         return self
     }
 }
