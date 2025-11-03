@@ -7,7 +7,7 @@ public protocol PushedRobot<Parent>: Robot {
 public extension PushedRobot {
     @discardableResult
     func goBack() -> Parent {
-        if app.toolbars.buttons.firstMatch.exists {
+        if app.toolbars.buttons.exists {
             app.toolbars.buttons.firstMatch.tap()
         } else {
             app.navigationBars.buttons.firstMatch.tap()
