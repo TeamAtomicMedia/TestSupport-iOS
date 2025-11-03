@@ -121,10 +121,9 @@ struct HomeScreenRobot: Robot {
     }
 }
 
+/// Example Detail Robot inheriting from PushedRobot 
+/// PushedRobot uses a Parent generic to implement navigation operations for a pushed View, such as `.goBack()` and `.checkCanGoBack()`.
 struct DetailRobot<Parent: Robot>: PushedRobot {
-    // PushedRobot looks for a `Parent` type and finds the generic param.
-    // PushedRobot provides a `.goBack()` method, which returns the parent robot.
-    
     // ...
 }
 
