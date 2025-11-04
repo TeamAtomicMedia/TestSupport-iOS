@@ -7,7 +7,7 @@ public protocol PushedRobot<Parent>: Robot {
 public extension PushedRobot {
     @discardableResult
     func goBack() -> Parent {
-        if app.toolbars.buttons.exists {
+        if app.toolbars.buttons.firstMatch.exists {
             app.toolbars.buttons.firstMatch.tap()
         } else {
             app.navigationBars.buttons.firstMatch.tap()
@@ -17,7 +17,7 @@ public extension PushedRobot {
     
     @discardableResult
     func checkCanGoBack() -> Self {
-        XCTAssert(app.toolbars.buttons.exists || app.navigationBars.buttons.exists)
+        XCTAssert(app.toolbars.buttons.firstMatch.exists || app.navigationBars.buttons.firstMatch.exists)
         return self
     }
 }
