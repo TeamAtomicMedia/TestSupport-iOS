@@ -2,6 +2,7 @@
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
+import CompilerPluginSupport
 
 let package = Package(
     name: "TestSupport",
@@ -20,6 +21,9 @@ let package = Package(
         .library(
             name: "XCTestSupport",
             targets: ["XCTestSupport"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "602.0.0-latest"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
