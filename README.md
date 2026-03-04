@@ -140,29 +140,6 @@ func myTest() {
 
 Configure launch parameters for the app when used in UI tests. See the section under TestSupport above for usage examples.
 
-#### NetMock
-
-When NetMock is available, this package defines helpers for passing NetMock parameters via launch arguments.
-
-```swift
-extension AppRobot {
-    @discardableResult
-    func failLogin() -> Self {
-        // Various alternatives:
-        app.netmockOverride(.GET, "https://api.example.com/login", response: "Failure")
-
-        app.netmockOverride("https://api.example.com/login", response: "Failure")
-
-        app.netmockOverride("https://api.example.com/login", responses: ["Failure", "Success"])
-
-        let failLoginOverride = NetMock.Override(method: .GET, url: URL(string: "https://api.example.com/login")!, responses: ["Failure"])
-        app.netmockOverride(failLoginOverride)
-
-        return self
-    }
-}
-```
-
 #### Uninstall
 
 An uninstall helper is provided on XCUIApplication which deletes the app from the HomeScreen via touch interactions. If an app is able to tear down its state programmatically, that approach is preferred as it is significantly faster.
