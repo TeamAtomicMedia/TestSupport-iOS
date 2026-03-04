@@ -1,6 +1,5 @@
 import XCTest
 import TestSupport
-import NetMock
 
 /// A stateless type representing an app page, configuration, or modal.
 /// UI-test-specific expectations are passed to the robot's methods by UI tests.

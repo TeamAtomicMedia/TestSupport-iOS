@@ -142,7 +142,7 @@ Configure launch parameters for the app when used in UI tests. See the section u
 
 #### NetMock
 
-This package defines helpers for passing NetMock parameters via launch arguments.
+When NetMock is available, this package defines helpers for passing NetMock parameters via launch arguments.
 
 ```swift
 extension AppRobot {

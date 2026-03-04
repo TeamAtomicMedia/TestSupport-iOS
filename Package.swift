@@ -21,19 +21,16 @@ let package = Package(
             name: "XCTestSupport",
             targets: ["XCTestSupport"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/TeamAtomicMedia/NetMock-iOS.git", from: "3.0.0"),
-    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "TestSupport",
-            dependencies: [.product(name: "NetMock", package: "netmock-ios")]
+            dependencies: []
         ),
         .target(
             name: "XCTestSupport",
-            dependencies: [.product(name: "NetMock", package: "netmock-ios"), "TestSupport"]
+            dependencies: ["TestSupport"]
         ),
         .testTarget(
             name: "TestSupportTests",
