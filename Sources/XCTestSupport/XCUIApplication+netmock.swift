@@ -1,9 +1,12 @@
 import XCTest
 import TestSupport
+#if canImport(NetMock)
 import NetMock
+#endif
 
 public extension XCUIApplication {
     
+#if canImport(NetMock)
     // MARK: - NetMock
     
     @discardableResult
@@ -30,4 +33,5 @@ public extension XCUIApplication {
             fatalError(error.localizedDescription)
         }
     }
+#endif
 }

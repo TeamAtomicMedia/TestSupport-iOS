@@ -1,5 +1,7 @@
 import Foundation
+#if canImport(NetMock)
 import NetMock
+#endif
 
 /// Extend with static constants to represent string values in the launch environment.
 public struct LaunchEnv: RawRepresentable, Sendable {
@@ -7,7 +9,7 @@ public struct LaunchEnv: RawRepresentable, Sendable {
     public init(rawValue: String) {
         self.rawValue = rawValue
     }
-    
+#if canImport(NetMock)
     public static let netMockOverrides = Self(rawValue: "NetMockOverrides")
     
     public static var netMockOverridesValue: [NetMock.Override] {
@@ -21,6 +23,7 @@ public struct LaunchEnv: RawRepresentable, Sendable {
             return []
         }
     }
+#endif
     
     public var value: String? {
         ProcessInfo.processInfo.environment["-" + self.rawValue]
