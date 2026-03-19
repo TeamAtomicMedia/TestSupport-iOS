@@ -3,6 +3,12 @@ import XCTest
 /// A robot for a view which has been pushed to a NavigationStack.
 public protocol PushedRobot<Parent>: Robot {
     associatedtype Parent: Robot
+    
+    @discardableResult
+    func goBack() -> Parent
+    
+    @discardableResult
+    func checkCanGoBack() -> Self
 }
 public extension PushedRobot {
     @discardableResult
