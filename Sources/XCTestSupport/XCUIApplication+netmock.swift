@@ -1,6 +1,7 @@
 import XCTest
 import TestSupport
 import NetMock
+import NetMockCore
 
 public extension XCUIApplication {
     
